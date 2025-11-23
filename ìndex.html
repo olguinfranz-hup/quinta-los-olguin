@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinta Los Olguin - Tu Lugar de Eventos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a3d62, #1e5f8a, #2d8bc0);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #0a3d62;
+        }
+        
+        h1 {
+            color: #0a3d62;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            color: #1e5f8a;
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .pool-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .pool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pool-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .pool-info {
+            padding: 20px;
+        }
+        
+        .pool-info h3 {
+            color: #0a3d62;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .pool-info p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .address-section {
+            background: linear-gradient(to right, #0a3d62, #1e5f8a);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .address-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .address {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        
+        .map-link {
+            display: inline-block;
+            background-color: #fff;
+            color: #0a3d62;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-link:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+        }
+        
+        .custom-image-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .custom-image-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quinta Los Olguin</h1>
+            <p class="subtitle">El lugar perfecto para tus eventos especiales</p>
+        </header>
+        
+        <section class="gallery">
+            <div class="pool-card">
+                <!-- CORREGIDO: Agregué comillas -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgJzBz9v6z5K36d3zJxA18YEPod6LBSm2zoJHheGIQkqOmKHgjEfycW4vlwTupV6Gbv0o&usqp=CAU" alt="Piscina Principal" class="pool-img">
+                <div class="pool-info">
+                    <h3>Piscina Principal</h3>
+                    <p>Nuestra espectacular piscina principal, ideal para refrescarse durante los eventos de verano.</p>
+                </div>
+            </div>
+            
+            <div class="pool-card">
+                <img src="https://i.pinimg.com/originals/10/31/00/103100050324d34bb4406d427f7819c7.jpg" alt="Área de Eventos" class="pool-img">
+                <div class="pool-info">
+                    <h3>Área de Eventos</h3>
+                    <p>Amplio espacio para celebrar bodas, cumpleaños y todo tipo de reuniones familiares.</p>
+                </div>
+            </div>
+            
+            <div class="pool-card">
+                <img src="https://araucasi.com.ar/wp-content/uploads/2021/12/26-1-1170x785.jpg" alt="Jardines" class="pool-img">
+                <div class="pool-info">
+                    <h3>Jardines</h3>
+                    <p>Hermosos jardines que rodean la quinta, creando un ambiente natural y acogedor.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="custom-image-section">
+            <div class="custom-image-container">
+                <h2>Nuestra Quinta</h2>
+                <!-- REEMPLAZA CON EL ENLACE DIRECTO DE TU IMAGEN -->
+                <img src="https://i.ibb.co/ns1gSghd/Imagen-de-Whats-App-2025-11-22-a-las-19-54-30-139746cb.jpg" alt="Quinta Los Olguin" class="custom-image">
+            </div>
+        </section>
+        
+        <section class="address-section">
+            <h2>Visítanos</h2>
+            <p class="address">Avenida Palmar Viruez, Santa Cruz de la Sierra</p>
+            <a href="https://maps.app.goo.gl/a7NTjNMEfifDVVPx6" target="_blank" class="map-link">
+                <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
+            </a>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+591 74946964</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Abierto de Martes a Domingo de 09:00am a 18:00pm</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Quinta Los Olguin. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
